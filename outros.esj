@@ -1,0 +1,10 @@
+<div>
+        <%= pessoa.nome %>
+    </div>
+    <div>
+        <%= pessoa.curso %>
+    </div>
+
+    <% if(pessoa.curso == "Informática"){ %>
+        <div>Informática é o melhor curso</div>
+    <%} %>

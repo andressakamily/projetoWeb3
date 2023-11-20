@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de usuário</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div>
+      <% if (status == 1) { %>
+        <div style="background-color: lightgoldenrodyellow;">
+          E-mail e/ou senha inválido(s)!
+          </div>
+          <% } %>
+    <br>
+          <h4>Login Usuarios</h4>
+     <form action="/usuarios/login" method="post">
+        <div class="mb-3">
+          <div class="mb-3"></div>
+          <label class="form-label">E-mail:</label>
+          <input type= "email" class="form-control" name= "email">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Senha:</label>
+          <input type= "password" class="form-control" name= "senha">
+        </div>
+          <input type= "submit" class="btn btn-primary" value="Login"></input>
+    </form>
+        </div>
+               <%- include("../partials/rodape.ejs") %><br>
+               <div>
+                <a href="/usuarios/login"> Não possui conta?</a>
+              </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir dados de um cliente</title>
+    <%- include("../partials/cabecalho.ejs") %><br>
+</head>
+<body>
+  <div class="conteiner">
+    <h5>Cliente <%= cliente.id %></h5>
+        <div>
+         <h5> <b>Nome:</b><%= cliente.nome %></h5>
+        </div>
+        <div>
+          <h5><b>Idade:</b><%= cliente.idade %></h5>
+        </div>
+        <br>
+        <a href="/clientes/">
+          <input type="button" class="bnt bnt-secondary" value="<<Voltar"></a>
+        </div>
+        
+        <%- include("../partials/rodape.ejs") %><br>
+</body>
+</html>

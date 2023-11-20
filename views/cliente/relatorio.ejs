@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de clientes</title>
+  <%- include("../partials/cabecalho.ejs") %><br>
+</head>
+<body>
+  <div class="conteiner"></div>
+  <% if (status == 1) { %>
+    <div style="background-color: rgb(0, 255, 98);">Cliente Cadastrado com sucesso</div>
+  <% } %>
+  <div>
+    <% if (status == 2) { %>
+      <div style="background-color: rgb(255, 0, 0);">Cliente Removido com sucesso</div>
+    <% } %>
+  <br>
+  <div>
+    <% if (status == 3) { %>
+      <div style="background-color: lightcoral;">Cliente Atualizado com sucesso</div>
+    <% } %>
+  <br>
+  <table class="table table-striped">
+    <th> ID</th>
+    <th> Nome</th>
+    <th> Idade</th>
+    <th> Detalhar</th>
+    <th> Atualizar</th>
+    <th> Remover</th>
+  <% for (const cliente of vetorClientes) { %>
+    <tr>
+    <td><%= cliente.id %></td>
+    <td><%= cliente.nome %></td>
+    <td><%= cliente.idade %></td>
+    <td>
+      <a type="button" class="btn btn-info" href="/clientes/<%= cliente.id %>">Detalhes</a>
+      </td> 
+      <td>
+        <a type="button" class="btn btn-warning"  href="/clientes/cadastrar/<%= cliente.id %>">Atualizar</a>
+      </td>
+      <td>
+        <a type="button" class="btn btn-danger" onclick="return confirm ('Deseja realmente remover?')" href="/clientes/remover/<%= cliente.id %>">Remover</a>
+      </td>
+     
+  </tr>
+  <%} %>
+</table>
+  <a href="/">
+    <input type="button" class="bnt bnt-secondary" value="<<Voltar"></a>
+  <%- include("../partials/rodape.ejs") %>
+</body>
+</html>
